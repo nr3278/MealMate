@@ -1,93 +1,124 @@
 <style>
+/* 基本設定 */
+
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.5;
+    background-color: #f5f5f5;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
 }
 
-/* コンテナ */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* フォーム */
-form {
+    min-height: 100vh; /* ビューポート全体の高さに対応 */
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* コンテンツを上下に分散 */
+    background-color: white; /* 背景色を設定 */
+    padding: 20px; /* 余白を調整 */
 }
 
-form label {
-    margin-top: 10px;
+/* ヘッダー */
+.header {
+    text-align: center;
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333333;
 }
 
-form select,
-form textarea,
-form button {
-    margin-top: 5px;
+/* 翻訳セクション */
+.translation-section {
     padding: 10px;
+}
+
+.user-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.language-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.language-selection label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.record-btn {
+    background: #ffcc00;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.record-btn:hover {
+    background: #ff9900;
+}
+
+.output-text {
     font-size: 1rem;
-    border: 1px solid #cccccc;
+    text-align: center;
+    margin: 10px 0;
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 10px;
     border-radius: 5px;
+    background: #f9f9f9;
 }
 
-form textarea {
-    resize: none;
-    height: 100px;
-}
-
-form button {
-    background-color: #007BFF;
+.read-aloud-btn,
+.translate-btn {
+    background: #007BFF;
     color: white;
     border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    transition: background 0.3s ease;
 }
 
-form button:hover {
-    background-color: #0056b3;
+.read-aloud-btn:hover,
+.translate-btn:hover {
+    background: #0056b3;
 }
 
-/* レスポンシブデザイン */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        margin: 10px;
-    }
-
-    form label,
-    form select,
-    form textarea,
-    form button {
-        font-size: 0.9rem;
-    }
-
-    form textarea {
-        height: 80px;
-    }
+hr {
+    border: 0.5px solid #ddd;
+    width: 90%;
+    margin: 20px auto;
 }
 
+/* レスポンシブ設定 */
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
+    .output-text {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 
-    .container {
-        padding: 10px;
+    .record-btn {
+        padding: 8px;
+        font-size: 1rem;
     }
 
-    form button {
-        padding: 12px;
-        font-size: 0.85rem;
+    .read-aloud-btn,
+    .translate-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
 }
 </style>
@@ -95,28 +126,57 @@ form button:hover {
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-	<%@ include file="./../userbase.html" %>
+<%@ include file="./../userbase.html" %>
+<body>
+    <div class="container">
 
-<form method="POST" action="/translate">
-    <label for="sourceLang">Source Language:</label>
-    <select name="sourceLang">
-        <option value="en">English</option>
-        <option value="ja">Japanese</option>
-        <!-- 他の言語 -->
-    </select>
-    <label for="targetLang">Target Language:</label>
-    <select name="targetLang">
+        <div class="translation-section">
+            <!-- 対話相手 -->
+            <div class="user-block">
+<div class="language-selection">
+    <!-- 言語を選択できるドロップダウン -->
+    <select id="userLang" name="userLang">
         <option value="ja">Japanese</option>
         <option value="en">English</option>
-
-
-        <!-- 他の言語 -->
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <!-- 必要な言語を追加 -->
     </select>
-    <textarea name="text" placeholder="Enter text here"></textarea>
-    <button type="submit">Translate</button>
-</form>
+    <button class="record-btn">🎤</button>
+</div>
+
+
+                <p class="output-text">私は強い</p>
+                <button class="read-aloud-btn">🔊</button>
+            </div>
+
+            <hr>
+
+            <!-- 外国人利用者 -->
+            <div class="user-block">
+
+                    <div class="language-selection">
+    <!-- 言語を選択できるドロップダウン -->
+    <select id="userLang" name="userLang">
+        <option value="en">English</option>
+        <option value="ja">Japanese</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <!-- 必要な言語を追加 -->
+    </select>
+    <button class="record-btn">🎤</button>
+</div>
+
+                <p class="output-text">I'm strong.</p>
+                <button class="translate-btn">⇧</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 </head>
+
