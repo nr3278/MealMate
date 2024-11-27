@@ -10,10 +10,12 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 .login-container {
-    width: 600px;
     margin: 100px auto;
     padding: 20px;
     background-color: #fff;
@@ -79,7 +81,7 @@ body {
         <label for="password">password</label>
 <input type="password" id="password" name="password" size="20" maxlength="20" required><br><br>
 
-<label><a href="###">Click Here for Signin</a></label>
+<label><a href="signin.jsp">Click Here for Signin</a></label>
 
         <input type="submit" name="login" value="Login">
 </form>

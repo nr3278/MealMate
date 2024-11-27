@@ -10,10 +10,12 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 .signin-container {
-    width: 600px;
     margin: 100px auto;
     padding: 20px;
     background-color: #fff;
@@ -26,28 +28,18 @@ body {
     background-color: #f1f1f1;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
     font-size: 25px;
 }
 
 .signin-container input[type="text"],
-.signin-container input[type="password"] {
+.signin-container input[type="password"],
+.signin-container select {
     display: block;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
-}
-
-.signin-container label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.signin-container label input {
-    margin-right: 5px;
 }
 
 .signin-container input[type="submit"] {
@@ -74,21 +66,24 @@ body {
 <h1>Signin</h1>
 <form action="${pageContext.request.contextPath}/login" method="post">
 
-<label><a href="###">Click Here for Signin</a></label>
+<label><a href="login.jsp">Click Here for Login</a></label><br><br>
 
-<label for="name">Name</label>
+<label for="name">Name</label><br>
 <input type="text" id="name" name="name" size="20" maxlength="20" required><br><br>
 
-<label for="lan">Language</label>
-<input type="text" id="lan" name="lan" size="20" maxlength="20" required><br><br>
+<label for="lan">Language</label><br>
+ <select id="lan" name="lan" required>
+        <option value="en">English</option>
+        <option value="ja">Japanese</option>
+    </select><br><br>
 
-<label for="mail">E-mail</label>
+<label for="mail">E-mail</label><br>
 <input type="text" id="mail" name="mail" size="20" maxlength="20" required><br><br>
 
-<label for="password">Password</label>
+<label for="password">Password</label><br>
 <input type="password" id="password" name="password" size="20" maxlength="20" required><br><br>
 
-<label for="confirmpassword">Confirm password</label>
+<label for="confirmpassword">Confirm password</label><br>
 <input type="password" id="confirmpassword" name="confirmpassword" size="20" maxlength="20" required><br><br>
 
 
