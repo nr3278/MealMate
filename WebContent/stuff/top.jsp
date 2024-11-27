@@ -3,5 +3,7 @@
 
 <c:import url="/stuffbase.jsp">
 	<c:param name="title">たいとる</c:param>
-	<c:param name="body">fuga</c:param>
+	<c:param name="body">
+		<button onclick="location.href=''">ボタン</button>
+	</c:param>
 </c:import>
