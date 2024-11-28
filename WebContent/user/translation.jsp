@@ -108,7 +108,7 @@ body {
 
 hr {
     border: 0.5px solid #ddd;
-    width: 90%;
+    width: 100%;
     margin: 20px auto;
 }
 
