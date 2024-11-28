@@ -1,23 +1,28 @@
-<style>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<!DOCTYPE html>
+<html lang="ja">
+<%@ include file="./../userbase.html" %>
+<head>
+<style>
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    color: #333;r
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    min-height: 100vh; /* ビューポート全体の高さに対応 */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* コンテンツを上下に分散 */
-    background-color: white; /* 背景色を設定 */
-    padding: 20px; /* 余白を調整 */
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
 }
 
-/* ヘッダー */
 .header {
     text-align: center;
     background: #007BFF;
@@ -27,9 +32,8 @@ body {
     font-weight: bold;
 }
 
-/* 翻訳セクション */
 .translation-section {
-	min-height: 100vh;
+    min-height: 100vh;
     padding: 15%;
 }
 
@@ -48,12 +52,13 @@ body {
     margin-bottom: 10px;
 }
 
-.language-selection label {
-    font-size: 1.2rem;
-    font-weight: bold;
+.language-selection select {
+    font-size: 1rem;
+    padding: 5px;
+    margin-right: 10px;
 }
 
-.record-btn {
+.language-selection .record-btn {
     background: #ffcc00;
     border: none;
     font-size: 1.2rem;
@@ -63,31 +68,24 @@ body {
     transition: background 0.3s ease;
 }
 
-.record-btn:hover {
+.language-selection .record-btn:hover {
     background: #ff9900;
 }
 
-.output-text1 {
-    font-size: 1rem;
-    text-align: center;
-    margin: 10px 0;
+.output-text1, .output-text2 {
+    font-size: 3rem; /* フォントサイズを大きくする */
+    text-align: center; /* 文字を中央揃え */
+    margin: 10px auto; /* 上下の空白を設定 */
     width: 90%;
+    height: 170px; /* テキスト入力欄を大きくする */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     background: #f9f9f9;
-    transform: scale(-1, -1);
-}
-
-.output-text2 {
-    font-size: 1rem;
-    text-align: center;
-    margin: 10px 0;
-    width: 90%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    background: #f9f9f9;
+    display: flex;
+    align-items: center; /* 縦方向中央揃え */
+    justify-content: center; /* 横方向中央揃え */
+    overflow-y: auto;
 }
 
 .read-aloud-btn,
@@ -96,8 +94,8 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 20px 40px; /* ボタンを画面に合わせて大きくする */
+    font-size: 1.6rem; /* ボタンのフォントサイズを調整 */
     cursor: pointer;
     margin-top: 10px;
     transition: background 0.3s ease;
@@ -114,11 +112,11 @@ hr {
     margin: 20px auto;
 }
 
-/* レスポンシブ設定 */
 @media (max-width: 480px) {
-    .output-text {
-        font-size: 0.9rem;
+    .output-text1, .output-text2 {
+        font-size: 1rem;
         padding: 8px;
+        height: 80px;
     }
 
     .record-btn {
@@ -128,38 +126,26 @@ hr {
 
     .read-aloud-btn,
     .translate-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
+        padding: 10px 20px; /* モバイル向けにサイズ調整 */
+        font-size: 1rem;
     }
 }
 </style>
-
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
-<html lang="ja">
-<%@ include file="./../userbase.html" %>
+</head>
 <body>
     <div class="container">
-
         <div class="translation-section">
             <!-- 対話相手 -->
             <div class="user-block">
-<div class="language-selection">
-    <!-- 言語を選択できるドロップダウン -->
-    <select id="userLang" name="userLang">
-        <option value="ja">Japanese</option>
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
-        <option value="fr">French</option>
-        <!-- 必要な言語を追加 -->
-    </select>
-    <button class="record-btn">🎤</button>
-</div>
-
-
+                <div class="language-selection">
+                    <select id="userLang1" name="userLang1">
+                        <option value="ja">Japanese</option>
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                    <button class="record-btn">🎤</button>
+                </div>
                 <p class="output-text1">私は強い</p>
                 <button class="read-aloud-btn">🔊</button>
             </div>
@@ -168,19 +154,15 @@ hr {
 
             <!-- 外国人利用者 -->
             <div class="user-block">
-
-                    <div class="language-selection">
-    <!-- 言語を選択できるドロップダウン -->
-    <select id="userLang" name="userLang">
-        <option value="en">English</option>
-        <option value="ja">Japanese</option>
-        <option value="es">Spanish</option>
-        <option value="fr">French</option>
-        <!-- 必要な言語を追加 -->
-    </select>
-    <button class="record-btn">🎤</button>
-</div>
-
+                <div class="language-selection">
+                    <select id="userLang2" name="userLang2">
+                        <option value="en">English</option>
+                        <option value="ja">Japanese</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                    <button class="record-btn">🎤</button>
+                </div>
                 <p class="output-text2">I'm strong.</p>
                 <button class="translate-btn">⇧</button>
             </div>
@@ -188,6 +170,3 @@ hr {
     </div>
 </body>
 </html>
-
-</head>
-
