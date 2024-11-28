@@ -1,11 +1,9 @@
 <style>
-/* 基本設定 */
-
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    color: #333;
+    color: #333;r
     margin: 0;
     padding: 0;
 }
@@ -31,14 +29,15 @@ body {
 
 /* 翻訳セクション */
 .translation-section {
-    padding: 10px;
+	min-height: 100vh;
+    padding: 15%;
 }
 
 .user-block {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 15%;
 }
 
 .language-selection {
@@ -68,7 +67,19 @@ body {
     background: #ff9900;
 }
 
-.output-text {
+.output-text1 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0;
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transform: scale(-1, -1);
+}
+
+.output-text2 {
     font-size: 1rem;
     text-align: center;
     margin: 10px 0;
@@ -149,7 +160,7 @@ hr {
 </div>
 
 
-                <p class="output-text">私は強い</p>
+                <p class="output-text1">私は強い</p>
                 <button class="read-aloud-btn">🔊</button>
             </div>
 
@@ -170,7 +181,7 @@ hr {
     <button class="record-btn">🎤</button>
 </div>
 
-                <p class="output-text">I'm strong.</p>
+                <p class="output-text2">I'm strong.</p>
                 <button class="translate-btn">⇧</button>
             </div>
         </div>
