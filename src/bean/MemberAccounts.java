@@ -1,16 +1,16 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.Date;
 
-public class MemberAccount implements Serializable {
+public class MemberAccounts implements Serializable {
     private String id;
     private String name;
     private String email;
     private String password;
-    // DateTime型どこ?
-//    private DateTime lastLogin;
-    private Integer languageId;
-//    private DateTime passwordUpdated;
+    private Date lastLogin;
+    private Date passwordUpdated;
+    private Languages languages;
 
     public String getId() {
         return id;
@@ -36,10 +36,23 @@ public class MemberAccount implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public Integer getLanguageId() {
-        return languageId;
+    public Date getLastLogin() {
+        return lastLogin;
     }
-    public void setLanguageId(Integer languageId) {
-        this.languageId = languageId;
+    public void setLastLogin(Date lastLogin) {
+        this.lastLogin = lastLogin;
     }
+    public Date getPasswordUpdated() {
+        return passwordUpdated;
+    }
+    public void setPasswordUpdated(Date passwordUpdated) {
+        this.passwordUpdated = passwordUpdated;
+    }
+    public Languages getLanguages() {
+        return languages;
+    }
+    public void setLanguages(Languages languages) {
+        this.languages = languages;
+    }
+
 }

@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class ProductFoods implements Serializable {
     private Integer id;
-    private String productId;
-    private Integer foodsId;
+    private Products products;
+    private Foods foods;
 
     public Integer getId() {
         return id;
@@ -13,16 +13,17 @@ public class ProductFoods implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getProductId() {
-        return productId;
+    public Products getProducts() {
+        return products;
     }
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setProducts(Products products) {
+        this.products = products;
     }
-    public Integer getFoodsId() {
-        return foodsId;
+    public Foods getFoods() {
+        return foods;
     }
-    public void setFoodsId(Integer foodsId) {
-        this.foodsId = foodsId;
+    public void setFoods(Foods foods) {
+        this.foods = foods;
     }
+
 }

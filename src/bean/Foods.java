@@ -7,7 +7,7 @@ public class Foods implements Serializable {
     private String foodName;
     private String iconR;
     private String iconG;
-    private Integer categoryId;
+    private Categories categories;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class Foods implements Serializable {
     public void setIconG(String iconG) {
         this.iconG = iconG;
     }
-    public Integer getCategoryId() {
-        return categoryId;
+    public Categories getCategories() {
+        return categories;
     }
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
+    public void setCategories(Categories categories) {
+        this.categories = categories;
     }
 
 }

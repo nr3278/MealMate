@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class RestFoods implements Serializable {
     private Integer id;
-    private String userAccounts;
-    private Integer foodId;
+    private MemberAccounts memberAccounts;
+    private Foods foods;
 
     public Integer getId() {
         return id;
@@ -13,16 +13,17 @@ public class RestFoods implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getUserAccounts() {
-        return userAccounts;
+    public MemberAccounts getMemberAccounts() {
+        return memberAccounts;
     }
-    public void setUserAccounts(String userAccounts) {
-        this.userAccounts = userAccounts;
+    public void setMemberAccounts(MemberAccounts memberAccounts) {
+        this.memberAccounts = memberAccounts;
     }
-    public Integer getFoodId() {
-        return foodId;
+    public Foods getFoods() {
+        return foods;
     }
-    public void setFoodId(Integer foodId) {
-        this.foodId = foodId;
+    public void setFoods(Foods foods) {
+        this.foods = foods;
     }
+
 }

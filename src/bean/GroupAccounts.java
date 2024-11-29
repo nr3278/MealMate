@@ -1,15 +1,16 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class GroupAccounts implements Serializable {
     private String id;
     private String name;
     private String email;
     private String password;
-//    private DateTime lastLogin;
-//    private Datetime passwordUpdated;
-    private String group;
+    private Date lastLogin;
+    private Date passwordUpdated;
+    private Groups groups;
     private boolean isAdmin;
 
     public String getId() {
@@ -36,11 +37,23 @@ public class GroupAccounts implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getGroup() {
-        return group;
+    public Date getLastLogin() {
+        return lastLogin;
     }
-    public void setGroup(String group) {
-        this.group = group;
+    public void setLastLogin(Date lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+    public Date getPasswordUpdated() {
+        return passwordUpdated;
+    }
+    public void setPasswordUpdated(Date passwordUpdated) {
+        this.passwordUpdated = passwordUpdated;
+    }
+    public Groups getGroups() {
+        return groups;
+    }
+    public void setGroups(Groups groups) {
+        this.groups = groups;
     }
     public boolean isAdmin() {
         return isAdmin;
@@ -48,4 +61,5 @@ public class GroupAccounts implements Serializable {
     public void setAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
+
 }
