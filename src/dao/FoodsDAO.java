@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Foods_all_name;
+import bean.Foods;
 
 public class FoodsDAO extends DAO {
-	public List<Foods_all_name> all() throws Exception{
-		List<Foods_all_name> list = new ArrayList<Foods_all_name>();
+	public List<Foods> all() throws Exception{
+		List<Foods> list = new ArrayList<Foods>();
 
 		// データベースに接続
 		Connection con = getConnection();
@@ -24,11 +24,11 @@ public class FoodsDAO extends DAO {
 
 		// 結果から1件ずつ取り出すループ
 		while (rs.next()) {
-			Foods_all_name f = new Foods_all_name();
+			Foods f = new Foods();
 
 //			値のセット
 			f.setId(rs.getInt("id"));
-			f.setName(rs.getString("name"));
+			f.setFoodName(rs.getString("name"));
 
 			// リストに追加
 			list.add(f);
