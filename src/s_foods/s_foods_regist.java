@@ -7,6 +7,7 @@ package s_foods;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tool.CommonServlet;
 
@@ -17,8 +18,15 @@ public class s_foods_regist extends CommonServlet{
 
 	@Override
 	protected void get(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		HttpSession session = req.getSession();
 
-//		食材を参照するDAO
+
+//		グループコードを取得
+		String gru_id = req.getParameter("group_code");
+
+
+
+		//		食材を参照するDAO
 
 //		食材をリストにする
 

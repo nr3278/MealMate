@@ -7,6 +7,7 @@
 
 		<title>${ param.title }</title>
 		<link rel="stylesheet" type="text/css" href="/MealMate/static/stuff.css">
+		<script src="/MealMate/static/stuff.js"></script>
 	</head>
 	<body>
 
