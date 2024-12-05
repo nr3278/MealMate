@@ -3,16 +3,16 @@ package bean;
 import java.io.Serializable;
 
 public class Foods implements Serializable {
-    private Integer id;
+    private int id;
     private String foodName;
     private String iconR;
     private String iconG;
     private Categories categories;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getFoodName() {

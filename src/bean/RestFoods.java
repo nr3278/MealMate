@@ -3,14 +3,14 @@ package bean;
 import java.io.Serializable;
 
 public class RestFoods implements Serializable {
-    private Integer id;
+    private int id;
     private MemberAccounts memberAccounts;
     private Foods foods;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
     public MemberAccounts getMemberAccounts() {

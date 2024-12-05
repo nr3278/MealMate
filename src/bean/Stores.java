@@ -18,8 +18,8 @@ public class Stores implements Serializable {
     private double longitude;
     private Time openingTime;
     private Time closingTime;
-    private Integer avg_amount_low;
-    private Integer avg_amount_high;
+    private int avg_amount_low;
+    private int avg_amount_high;
     private String figure1;
     private String figure2;
     private String figure3;
@@ -73,16 +73,16 @@ public class Stores implements Serializable {
     public void setClosingTime(Time closingTime) {
         this.closingTime = closingTime;
     }
-    public Integer getAvg_amount_low() {
+    public int getAvg_amount_low() {
         return avg_amount_low;
     }
-    public void setAvg_amount_low(Integer avg_amount_low) {
+    public void setAvg_amount_low(int avg_amount_low) {
         this.avg_amount_low = avg_amount_low;
     }
-    public Integer getAvg_amount_high() {
+    public int getAvg_amount_high() {
         return avg_amount_high;
     }
-    public void setAvg_amount_high(Integer avg_amount_high) {
+    public void setAvg_amount_high(int avg_amount_high) {
         this.avg_amount_high = avg_amount_high;
     }
     public String getFigure1() {
