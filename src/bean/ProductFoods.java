@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ProductFoods implements Serializable {
     private int id;
     private Products products;
-    private Foods foods;
+    private Foods[] foods;
 
     public int getId() {
         return id;
@@ -19,11 +19,10 @@ public class ProductFoods implements Serializable {
     public void setProducts(Products products) {
         this.products = products;
     }
-    public Foods getFoods() {
+    public Foods[] getFoods() {
         return foods;
     }
-    public void setFoods(Foods foods) {
+    public void setFoods(Foods[] foods) {
         this.foods = foods;
     }
-
 }
