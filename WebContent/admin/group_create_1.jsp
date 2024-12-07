@@ -22,7 +22,7 @@
 
 
 <div class="mail">
-	<label>メールアドレス：：</label>
+	<label>メールアドレス：</label>
     <input type="text" name="mail" id="mail" placeholder="メールアドレスを入力してください"  required>
 </div>
 
