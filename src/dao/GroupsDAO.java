@@ -75,4 +75,36 @@ public class GroupsDAO extends DAO {
 
         return group;
     }
+
+
+//  グループIDの重複チェック
+//	重複していたらFalseを返す
+    public boolean duplication(String gru_id) throws Exception {
+        Connection connection = getConnection();
+
+        // GROUP_CODEが指定されたgru_idと一致するかを確認するクエリを準備
+        PreparedStatement dup = connection.prepareStatement("SELECT GROUP_CODE FROM GROUPS_S WHERE GROUP_CODE = ?");
+        dup.setString(1, gru_id);
+
+        // クエリを実行して結果を取得
+        ResultSet rs = dup.executeQuery();
+
+        boolean dup_f = false; // デフォルト値をFalseに設定
+
+        // 結果セットをチェック
+        if (rs.next()) {
+            // 存在する場合、dup_fをTrueに設定
+            if (rs.getString("GROUP_CODE") != null) {
+                dup_f = false;
+            }
+        }
+
+        // リソースをクローズ
+        rs.close();
+        dup.close();
+        connection.close();
+
+        // dup_fを返す
+        return dup_f;
+    }
 }

@@ -34,9 +34,24 @@ public class group_create_in extends HttpServlet {
 	        HttpServletResponse resp
 	    ) throws ServletException, IOException {
 
+//		グループ名を取得
+		String gru_name = req.getParameter("name");
+
+//		電話番号を取得
+		String gru_tel = req.getParameter("tel_num");
+
+//		メールアドレスを取得
+		String gru_mail = req.getParameter("tel_num");
+
+
+
+
+
+
+
 
 	    // POSTリクエストの処理をここに追加
-	    req.getRequestDispatcher("group_create_1.jsp")
+	    req.getRequestDispatcher("group_create_2.jsp")
 	    .forward(req, resp);
 	}
 
