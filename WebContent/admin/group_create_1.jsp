@@ -9,7 +9,7 @@
 	<h1>グループ作成</h1>
 
 
-	<form id="group_reg">
+	<form action="/MealMate/admin/a_create_group_1" method="post">
 	<div class="name">
 	<label>グループ名：</label>
     <input type="text" name="name" id="name" placeholder="グループ名を入力してください"  required>
@@ -26,9 +26,12 @@
     <input type="text" name="mail" id="mail" placeholder="メールアドレスを入力してください"  required>
 </div>
 
-</form>
 
 <button onclick="location.href=''">作成</button>
+
+</form>
+
+
 <button onclick="location.href=''">キャンセル</button>
 
 	</c:param>
