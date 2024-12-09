@@ -8,6 +8,18 @@ public class Groups implements Serializable {
     private String email;
     private String name;
 
+    // デフォルトコンストラクタ
+    public Groups() {
+    }
+
+    // パラメータ付きコンストラクタ
+    public Groups(String groupCode, String phoneNum, String email, String name) {
+        this.groupCode = groupCode;
+        this.phoneNum = phoneNum;
+        this.email = email;
+        this.name = name;
+    }
+
     public String getGroupCode() {
         return groupCode;
     }
@@ -32,5 +44,4 @@ public class Groups implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
 }

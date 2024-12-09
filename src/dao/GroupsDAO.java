@@ -89,7 +89,7 @@ public class GroupsDAO extends DAO {
         // クエリを実行して結果を取得
         ResultSet rs = dup.executeQuery();
 
-        boolean dup_f = false; // デフォルト値をFalseに設定
+        boolean dup_f = true; // デフォルト値をtrueに設定
 
         // 結果セットをチェック
         if (rs.next()) {
