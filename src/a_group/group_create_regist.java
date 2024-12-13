@@ -118,7 +118,7 @@ System.out.print("登録コントローラまで");
 
 
  // 次の登録完了サーブレットにリダイレクト
-    resp.sendRedirect("/admin/a_create_group_1/regist/comp");
+    resp.sendRedirect(req.getContextPath() + "/admin/a_create_group_1/regist/comp");
 
 
 
