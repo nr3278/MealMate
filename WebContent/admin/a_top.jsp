@@ -9,6 +9,13 @@
 	<h1>TOP</h1>
 
 
+<form action="/MealMate/map" method="get">
+    <!-- フォームの入力フィールド -->
+    <button type="submit">
+住所実験</button>
+</form>
+
+
 <form action="/MealMate/admin/a_create_group_1" method="get">
     <!-- フォームの入力フィールド -->
     <button type="submit">グループ作成</button>
