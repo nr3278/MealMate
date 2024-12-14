@@ -53,6 +53,36 @@ public class GroupsDAO extends DAO {
         return groups;
     }
 
+//    店舗登録用
+//    「グループID：グループ名」グループ名の昇順
+    public List<Groups> id_name() throws Exception {
+    	List<Groups> groups_id_name = new ArrayList<Groups>();
+
+        Connection connection = getConnection();
+
+        PreparedStatement pStatement = connection.prepareStatement("select group_code ,name  from groups_s ORDER BY name ASC");
+
+        ResultSet rSet = pStatement.executeQuery();
+
+        while (rSet.next()) {
+            Groups group = new Groups();
+
+            group.setGroupCode(rSet.getString("group_code"));
+            group.setName(rSet.getString("name"));
+
+            groups_id_name.add(group);
+
+        }
+
+        pStatement.close();
+        connection.close();
+
+        return groups_id_name;
+
+    }
+
+
+
     // 別のDAOで使う用
     public Groups search(String id) throws Exception {
         Connection connection = getConnection();

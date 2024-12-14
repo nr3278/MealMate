@@ -9,7 +9,7 @@
 	<h1>店舗登録</h1>
 
 
-	<form id="store_reg">
+	<form action="/MealMate/admin/a_create_store_1" method="post">
 	<div class="name">
 	<label>店舗名：</label>
     <input type="text" name="name" id="name" placeholder="店舗名を入力してください"  required>
@@ -31,15 +31,17 @@
     <input type="text" name="address" id="address" placeholder="住所を入力してください"  required>
 </div>
 
-<div class="group">
-	<label>グループ：</label>
-	<select name="group_list">
-	<option>セブン：123</option>
-	<option>田口青果：980</option>
-	<option>菜々緒：342</option>
-	</select>
+<div class="groupList">
+
+	<label for="guroups_list">グループ</label>
+<select id="groups_list" name="groups_list">
+    <c:forEach var="group" items="${groupsList}">
+        <option value="${group.groupCode},${group.name}">${group.groupCode}：${group.name}</option>
+    </c:forEach>
+</select>
 </div>
 
+<button type="submit">登録</button>
 </form>
 
 <button onclick="location.href=''">登録</button>

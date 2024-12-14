@@ -32,6 +32,11 @@ minnminn</button>
     <button type="submit">グループ作成</button>
 </form>
 
+<form action="/MealMate/admin/a_create_store_1" method="get">
+    <!-- フォームの入力フィールド -->
+    <button type="submit">店舗作成</button>
+</form>
+
 <button onclick="location.href=''">作成</button>
 <button onclick="location.href=''">キャンセル</button>
 
