@@ -7,7 +7,18 @@
 
 
 	<h1>TOP</h1>
+<form action="/MealMate/admin/0013" method="post">
+    <!-- フォームの入力フィールド -->
+    <button type="submit">
+sasa1</button>
+</form>
 
+
+<form action="/MealMate/admin/0012" method="get">
+    <!-- フォームの入力フィールド -->
+    <button type="submit">
+minnminn</button>
+</form>
 
 <form action="/MealMate/map" method="get">
     <!-- フォームの入力フィールド -->
