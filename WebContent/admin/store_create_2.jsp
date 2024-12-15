@@ -10,68 +10,48 @@
 <h1>店舗登録確認</h1>
 
 
+<form action="/MealMate/admin/a_create_store_1/regist" method="post">
+	<table>
+		<tr>
+			<td>店舗名</td>
+			<td><input type="hidden" name="sto_name" value="${sto_name}">${sto_name}</td>
+		</tr>
 
-<table>
-<tr>
-<td>店舗名</td>
-<td>がちんこうどん</td>
-</tr>
-<tr>
-<td>電話番号</td>
-<td>08080808</td>
+		<tr>
+			<td>電話番号</td>
+			<td><input type="hidden" name="sto_tel" value="${sto_tel}">${sto_tel}</td>
+		</tr>
 
-</tr>
+		<tr>
+			<td>メールアドレス</td>
+			<td><input type="hidden" name="sto_mail" value="${sto_mail}">${sto_mail}</td>
+		</tr>
 
-<tr>
-<td>メールアドレス</td>
-<td>dfgfdg@dfg.df</td>
+		<tr>
+			<td>住所</td>
+			<td><input type="hidden" name="sto_address" value="${sto_address}">${sto_address}</td>
+		</tr>
 
-</tr>
-
-<tr>
-<td>住所</td>
-<td>埼玉県富士見野市123-08</td>
-
-</tr>
-<tr>
-<td>グループ</td>
-<td>麻美青果：134</td>
-
-</tr>
+		<tr>
+			<td>グループ名</td>
+			<td><input type="hidden" name="gru_id" value="${gru_id}">${gru_st}</td>
+		</tr>
 
 
-
-</table>
-
-
-<%--
-
-    <c:forEach var="groupDate" items="${groupDate}">
-        <table border="1">
-            <tr>
-                <td>グループ名</td>
-                <td>${gruName}</td>
-            </tr>
-            <tr>
-                <td>電話番号</td>
-                <td>${tel}</td>
-            </tr>
-            <tr>
-                <td>メールアドレス</td>
-                <td>${mail}</td>
-            </tr>
-            </table>
-    </c:forEach>
-     --%>
+	</table>
 
 
-    <p>上記の店舗を作成しますか？</p>
+	<p>上記の店舗を作成しますか？</p>
+	<button type="submit">登録</button>
+</form>
+
+
+
+
 
     <div id="decision">
 
-<div id="confirmed">
-        <button type="button" id="confirmed"> 作成 </button>
-</div>
+
 <div id="cancel">
         <button type="button" id="cancel"> キャンセル </button>
 </div>

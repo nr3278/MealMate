@@ -134,7 +134,7 @@ public class StoresDAO extends DAO {
         return line;
     }
 
-    public int insert(String name, String phoneNum, String gId, String address) throws Exception {
+    public int insert(String name, String phoneNum, String gId, Double latitude, Double longitude ) throws Exception {
         Connection connection = getConnection();
         PreparedStatement checkPs = connection.prepareStatement("select * from stores where store_code = ?");
         String sId = "";
@@ -149,15 +149,16 @@ public class StoresDAO extends DAO {
             }
         }
 
-        PreparedStatement pStatement = connection.prepareStatement("insert into stores value (?, ?, ?, ?, ?, ?, null, null, null, null, null, null, null, false)");
+        PreparedStatement pStatement = connection.prepareStatement("INSERT INTO stores (store_code, name, group_code, phone_num, latitude, longitude, opening_time, closing_time, avg_amount_low, avg_amount_high, figure1, figure2, figure3, is_action) "
+        		+ "VALUES (?, ?, ?, ?, ?, ?, null, null, null, null, null, null, null, false)");
 
         pStatement.setString(1, sId);
         pStatement.setString(2, name);
         pStatement.setString(3, gId);
         pStatement.setString(4, phoneNum);
         // 住所から緯度経度を取得(APIは一定回数まで無料?)
-//        pStatement.setDouble(6, latitude);
-//        pStatement.setDouble(7, longitude);
+        pStatement.setDouble(5, latitude);
+        pStatement.setDouble(6, longitude);
 
         int line = pStatement.executeUpdate();
 

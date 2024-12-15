@@ -1,4 +1,8 @@
-package a_group;
+//店舗登録　入力確認コントローラ
+
+
+
+package a_store;
 
 import java.io.IOException;
 import java.util.List;
@@ -39,7 +43,7 @@ public class store_create_in extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // POSTリクエストの処理
 
-//		グループ名を取得
+//		店舗名を取得
 		String sto_name = req.getParameter("name");
 
 //		電話番号を取得
@@ -58,14 +62,19 @@ public class store_create_in extends HttpServlet {
 		String gru_id = gru_id_name_List[0];
 		String gru_name = gru_id_name_List[1];
 
-		System.out.println(sto_name);
-		System.out.println(sto_tel);
-		System.out.println(sto_mail);
-		System.out.println(sto_address);
-		System.out.println(gru_id_name);
+//		確認画面表示用(グループ)
+		String gru_st = gru_id + "：" + gru_name;
 
-		System.out.println(gru_id);
-		System.out.println(gru_name);
+//		System.out.println(sto_name);
+//		System.out.println(sto_tel);
+//		System.out.println(sto_mail);
+//		System.out.println(sto_address);
+//		System.out.println(gru_id_name);
+//
+//		System.out.println(gru_id);
+//		System.out.println(gru_name);
+//
+//		System.out.println(gru_st);
 
 //		for(String s:gru_id_name_List){
 //			System.out.println(s);
@@ -74,7 +83,21 @@ public class store_create_in extends HttpServlet {
 //		System.out.println(gru_id_name_List);
 
 
-		req.getRequestDispatcher("store_create_1.jsp").forward(req, resp);
+//		確認画面表示用
+		req.setAttribute("sto_name",sto_name);
+		req.setAttribute("sto_tel",sto_tel);
+		req.setAttribute("sto_mail",sto_mail);
+		req.setAttribute("sto_address",sto_address);
+		req.setAttribute("gru_id_name",gru_id_name);
+
+//		グループ登録用（id）gru_id
+		req.setAttribute("gru_id",gru_id);
+
+//		グループ表示用
+		req.setAttribute("gru_st",gru_st);
+
+
+		req.getRequestDispatcher("store_create_2.jsp").forward(req, resp);
 
 
 
