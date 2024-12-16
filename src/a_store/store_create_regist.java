@@ -154,7 +154,7 @@ public class store_create_regist extends HttpServlet {
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("エラー");
+            System.out.println("何だこのエラー");
 
         }
 
