@@ -38,7 +38,7 @@
         <a href="http://localhost:8080/MealMate/user/register.jsp"><img class="text_img" src="../img/touroku.png"></a>
         <a href="http://localhost:8080/MealMate/user/AR.jsp"><img class="text_img" src="../img/AR.png"></a>
         <a href="http://localhost:8080/MealMate/user/map.jsp"><img class="text_img" src="../img/map.png"></a>
-        <a href="http://localhost:8080/MealMate/user/SAY.jsp"><img class="text_img" src="../img/sei.png"></a>
+        <a href="http://localhost:8080/MealMate/user/translation.jsp"><img class="text_img" src="../img/sei.png"></a>
         <a href="http://localhost:8080/MealMate/auth/login.jsp"><img class="text_img" src="../img/login3.png"></a>
         
     </div>
