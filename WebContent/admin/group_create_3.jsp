@@ -3,7 +3,7 @@
 
 
 
-<c:import url="/stuffbase.jsp">
+<c:import url="/adminbase.jsp">
 	<c:param name="title">管理 - グループ作成_完了</c:param>
 	<c:param name="body">
 

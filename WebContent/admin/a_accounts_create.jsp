@@ -1,11 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:import url="/stuffbase.jsp">
+<c:import url="/adminbase.jsp">
 	<c:param name="title">管理 - アカウント作成</c:param>
 	<c:param name="body">
 
 
-<form action="" method="post">
+<form action="/MealMate/admin/create_accounts_1" method="post">
 
 			<div class="id">
 				<label>ID：</label>

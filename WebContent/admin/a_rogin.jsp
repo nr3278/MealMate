@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:import url="/stuffbase.jsp">
+<c:import url="/adminbase.jsp">
 	<c:param name="title">管理 - ログイン</c:param>
 	<c:param name="body">
 

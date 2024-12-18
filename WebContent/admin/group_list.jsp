@@ -3,7 +3,7 @@
 
 <%-- バーコード印刷用に、後ほど大幅修正あり --%>
 
-<c:import url="/stuffbase.jsp">
+<c:import url="/adminbase.jsp">
 	<c:param name="title">管理 - </c:param>
 	<c:param name="body">
 
