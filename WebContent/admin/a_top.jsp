@@ -20,6 +20,12 @@ sasa1</button>
 minnminn</button>
 </form>
 
+<form action="/MealMate/admin/create_accounts_1" method="get">
+    <!-- フォームの入力フィールド -->
+    <button type="submit">
+パスワードを比較</button>
+</form>
+
 <form action="/MealMate/map" method="get">
     <!-- フォームの入力フィールド -->
     <button type="submit">

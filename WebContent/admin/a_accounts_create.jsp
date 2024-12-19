@@ -17,6 +17,11 @@
     			<input type="text" name="pass" id="pass" placeholder="パスワードを入力してください"  required>
 			</div>
 
+						<div class="password2">
+				<label>パスワード：</label>
+    			<input type="text" name="pass2" id="pass2" placeholder="パスワード2を入力してください"  required>
+			</div>
+
 <p>アカウント作成</p>
 <button type="submit">登録</button>
 </form>

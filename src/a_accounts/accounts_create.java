@@ -16,6 +16,7 @@ public class accounts_create extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+    	req.getRequestDispatcher("a_accounts_create.jsp").forward(req, resp);
     }
 
 
@@ -28,10 +29,16 @@ public class accounts_create extends HttpServlet {
 //		パスワードを取得
 		String ac_pass = req.getParameter("pass");
 
+//		パスワード2を取得
+		String ac_pass2 = req.getParameter("pass2");
+
 
 		// パスワードを取得してハッシュ化
 
 		String hash_pass = BCrypt.hashpw(ac_pass, BCrypt.gensalt());
+
+
+		boolean isPasswordCorrect = BCrypt.checkpw(ac_pass2, hash_pass);
 
 		System.out.println("ID");
 		System.out.println(ac_id);
@@ -39,6 +46,9 @@ public class accounts_create extends HttpServlet {
 		System.out.println(ac_pass);
 		System.out.println("ハッシュ後");
 		System.out.println(hash_pass);
+
+		System.out.println("パス識別");
+		System.out.println(isPasswordCorrect);
 
 
 
