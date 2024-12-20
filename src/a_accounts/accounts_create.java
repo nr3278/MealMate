@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import dao.AdminDAO;
+
 
 @WebServlet(urlPatterns={"/admin/create_accounts_1"})
 public class accounts_create extends HttpServlet {
@@ -49,6 +51,22 @@ public class accounts_create extends HttpServlet {
 
 		System.out.println("パス識別");
 		System.out.println(isPasswordCorrect);
+
+//		DAO
+		AdminDAO dao = new AdminDAO();
+
+		int in_dao;
+		try {
+			in_dao = dao.insert(ac_id,hash_pass);
+
+			System.out.println(in_dao);
+
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
+
+			e.printStackTrace();
+			System.out.println("daoでエラー");
+		}
 
 
 

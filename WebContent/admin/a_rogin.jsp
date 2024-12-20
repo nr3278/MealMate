@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:import url="/adminbase.jsp">
@@ -16,6 +17,7 @@
     			<input type="text" name="pass" id="pass" placeholder="パスワードを入力してください"  required>
 			</div>
 
+<button type="submit">ログイン</button>
 		</form>
 
 

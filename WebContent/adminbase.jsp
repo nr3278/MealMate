@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 
 		<title>${ param.title }</title>
-		<link rel="stylesheet" type="text/css" href="">
+		<link rel="stylesheet" type="text/css" href="/MealMate/static/admin.css">
 		<script src="/MealMate/static/stuff.js"></script>
 	</head>
 	<body>
