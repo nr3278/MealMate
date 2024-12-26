@@ -73,7 +73,7 @@ System.out.print("登録コントローラまで");
 
 //		グループID用ランダム（001～999）
         Random random = new Random();
-        int min = 1;
+        int min = 0;
         int max = 9;
 
 // 		minからmaxまでの範囲の乱数を生成

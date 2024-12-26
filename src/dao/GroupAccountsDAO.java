@@ -19,7 +19,7 @@ public class GroupAccountsDAO extends DAO {
         Connection connection = getConnection();
         boolean isExist = true;
 
-        PreparedStatement pStatement = connection.prepareStatement("select * from group_accounts where email = ?");
+        PreparedStatement pStatement = connection.prepareStatement("select * from group_accounts where email like ?");
 
         pStatement.setString(1, email);
 
@@ -75,7 +75,7 @@ public class GroupAccountsDAO extends DAO {
         GroupsDAO gDao = new GroupsDAO();
         GroupAccounts groupAccount = null;
 
-        PreparedStatement pStatement = connection.prepareStatement("select * from group_accounts where id = ?");
+        PreparedStatement pStatement = connection.prepareStatement("select * from group_accounts where id like ?");
 
         pStatement.setString(1, id);
 
