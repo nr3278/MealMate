@@ -12,6 +12,7 @@ public class GroupAccounts implements Serializable {
     private Date passwordUpdated;
     private Groups groups;
     private boolean isAdmin;
+    private String groupCode;
 
     public String getId() {
         return id;
@@ -61,5 +62,11 @@ public class GroupAccounts implements Serializable {
     public void setAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
+	public String getGroupCode() {
+		return groupCode;
+	}
+	public void setGroupCode(String groupCode) {
+		this.groupCode = groupCode;
+	}
 
 }

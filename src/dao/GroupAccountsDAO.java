@@ -72,27 +72,31 @@ public class GroupAccountsDAO extends DAO {
      */
     public GroupAccounts searchById(String id) throws Exception {
         Connection connection = getConnection();
-        GroupsDAO gDao = new GroupsDAO();
+//        GroupsDAO gDao = new GroupsDAO();
         GroupAccounts groupAccount = null;
 
         PreparedStatement pStatement = connection.prepareStatement("select * from group_accounts where id like ?");
-
         pStatement.setString(1, id);
 
         ResultSet rSet = pStatement.executeQuery();
 
         if (rSet.next()) {
             groupAccount = new GroupAccounts();
-
             groupAccount.setId(rSet.getString("id"));
             groupAccount.setName(rSet.getString("name"));
             groupAccount.setEmail(rSet.getString("email"));
+
             groupAccount.setLastLogin(rSet.getDate("last_login"));
             groupAccount.setPasswordUpdated(rSet.getDate("password_updated"));
-            groupAccount.setGroups(gDao.search(rSet.getString("group_code")));
+//            groupAccount.setGroups(gDao.search(rSet.getString("group_code")));
             groupAccount.setAdmin(rSet.getBoolean("is_admin"));
+            groupAccount.setGroupCode(rSet.getString("group_code"));
+
+        } else {
+            System.out.println("データなし（重複なし）");
         }
 
+        rSet.close();
         pStatement.close();
         connection.close();
 

@@ -1,6 +1,9 @@
 package s_accounts;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.ServletException;
@@ -48,7 +51,7 @@ public class stuff_create_accounts_regist extends HttpServlet {
 
 //		グループIDを取得
 //		HttpSession session = req.getSession();
-//		String g_name = (String) session.getAttribute("g_name");
+//		String g_id = (String) session.getAttribute("g_id");
 
 
 
@@ -87,6 +90,8 @@ public class stuff_create_accounts_regist extends HttpServlet {
 
 //			    ID生成→重複チェック
 			    while(id_dup == true){
+//			    for (int i = 0; i < 5; i++){
+
 			        Random random = new Random();
 			        int min = 0;
 			        int max = 9;
@@ -119,7 +124,7 @@ public class stuff_create_accounts_regist extends HttpServlet {
 			        String s_id_6 = Integer.toString(id_6);
 
 			        a_id = s_id_1 + s_id_2 + s_id_3 + s_id_4 + s_id_5 + s_id_6;
-//			        a_id = "000001";
+//			        a_id = "000010";
 
 			        System.out.println("ID生成");
 			        System.out.println(a_id);
@@ -149,11 +154,40 @@ public class stuff_create_accounts_regist extends HttpServlet {
 
 			    }
 
+//				店長権限
+			    boolean b_perm = false;
 
-//			    登録
+			    if(s_perm=="on"){
+			    	b_perm = true;
+			    }
 
+//			    ランダムパスワードを生成
 
+//			    36字
+			    List<String> pass_sel_list = new ArrayList<>(Arrays.asList("1","2","3","4","5","6","7","8","9","0","q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"));
 
+//			    生成されたパスワードのリスト
+			    List<String> pass_list = new ArrayList<>();
+
+		        Random random2 = new Random();
+		        int min2 = 0;
+		        int max2 = 35;
+
+		        for (int i = 0; i < 8; i++){
+//		 		minからmaxまでの範囲の乱数を生成
+//		      listの配列から
+
+		        	int pass_list_num = random2.nextInt((max2 - min2) + 1) + min2;
+
+		        	String pass_1 = pass_sel_list.get(pass_list_num);
+
+		        	pass_list.add(pass_1);
+
+		        }
+
+		        String password = String.join("", pass_list);
+		        System.out.println("パスワード");
+		        System.out.println(password);
 			}
 
 
