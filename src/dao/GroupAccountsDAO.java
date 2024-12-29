@@ -103,33 +103,35 @@ public class GroupAccountsDAO extends DAO {
         return groupAccount;
     }
 
-    public boolean insert(String name, String email, String gId, boolean isAdmin) throws Exception {
+    public boolean insert(String id,String name, String email, String gId, String password, boolean isAdmin) throws Exception {
         Connection connection = getConnection();
-        String id = "";
-
-        PreparedStatement pStatement1 = connection.prepareStatement("select * from group_accounts where id = ?");
+//        String id = "";
+//
+//        PreparedStatement pStatement1 = connection.prepareStatement("select * from group_accounts where id = ?");
         // パスワードはとりあえずnull
-        PreparedStatement pStatement2 = connection.prepareStatement("insert into group_accounts values (?, ?, ?, null, null, null, ?, ?)");
+        PreparedStatement pStatement2 = connection.prepareStatement("insert into group_accounts values (?, ?, ?, ?, null, null, ?, ?)");
 
-        while (true) {
-            id = createRandom(6);
-            pStatement1.setString(1, id);
-            ResultSet rSet = pStatement1.executeQuery();
-
-            if (!rSet.next()) {
-                break;
-            }
-        }
+//        IDランダム生成サーブレットで作っちゃった
+//        while (true) {
+//            id = createRandom(6);
+//            pStatement1.setString(1, id);
+//            ResultSet rSet = pStatement1.executeQuery();
+//
+//            if (!rSet.next()) {
+//                break;
+//            }
+//        }
 
         pStatement2.setString(1, id);
         pStatement2.setString(2, name);
         pStatement2.setString(3, email);
-        pStatement2.setString(4, gId);
-        pStatement2.setBoolean(5, isAdmin);
+        pStatement2.setString(4, password);
+        pStatement2.setString(5, gId);
+        pStatement2.setBoolean(6, isAdmin);
 
         int line = pStatement2.executeUpdate();
 
-        pStatement1.close();
+//        pStatement1.close();
         pStatement2.close();
         connection.close();
 

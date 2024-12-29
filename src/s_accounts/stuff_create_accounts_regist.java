@@ -11,6 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 import bean.GroupAccounts;
 import dao.GroupAccountsDAO;
@@ -49,9 +52,16 @@ public class stuff_create_accounts_regist extends HttpServlet {
 		String s_perm = req.getParameter("manager_permission");
 
 
-//		グループIDを取得
-//		HttpSession session = req.getSession();
-//		String g_id = (String) session.getAttribute("g_id");
+//		ログインしているアカウントのセッションからグループIDを取得
+		HttpSession session = req.getSession();
+		String g_id = (String) session.getAttribute("g_id");
+
+
+//		グループID（仮）
+		g_id = "001";
+
+		System.out.println("グループID");
+		System.out.println(g_id);
 
 
 
@@ -155,11 +165,15 @@ public class stuff_create_accounts_regist extends HttpServlet {
 			    }
 
 //				店長権限
-			    boolean b_perm = false;
+			    boolean b_perm = "on".equals(s_perm);
 
-			    if(s_perm=="on"){
-			    	b_perm = true;
-			    }
+//			    if(s_perm=="on"){
+//			    	b_perm = true;
+//			    }
+
+			    System.out.println("店長権限");
+		        System.out.println(b_perm);
+
 
 //			    ランダムパスワードを生成
 
@@ -188,6 +202,40 @@ public class stuff_create_accounts_regist extends HttpServlet {
 		        String password = String.join("", pass_list);
 		        System.out.println("パスワード");
 		        System.out.println(password);
+
+//		        パスワードのハッシュ化
+		        String hash_pass = BCrypt.hashpw(password, BCrypt.gensalt());
+
+
+//		        ハッシュ後のパスワードとハッシュ前のパスワードが一致するかの確認
+		        boolean isPasswordCorrect = BCrypt.checkpw(password, hash_pass);
+		        System.out.println("ハッシュ化の確認");
+		        System.out.println(isPasswordCorrect);
+
+
+//		        DAOに登録
+//		        ID：a_id
+//		        名前：s_name
+//		        グループID：g_id
+//		        メールアドレス：s_mail
+//		        パスワード：hash_pass
+//		        店長権限：b_perm
+
+		        try{
+
+		        	Boolean b_insert = dao.insert(a_id, s_name, s_mail, g_id, hash_pass, b_perm);
+		        	System.out.println("登録結果Boolean");
+			        System.out.println(b_insert);
+		        } catch (Exception e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+					System.out.println("DAO登録エラー");
+				}
+
+
+
+
+
 			}
 
 
