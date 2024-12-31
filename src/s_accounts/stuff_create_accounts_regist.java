@@ -226,6 +226,10 @@ public class stuff_create_accounts_regist extends HttpServlet {
 		        	Boolean b_insert = dao.insert(a_id, s_name, s_mail, g_id, hash_pass, b_perm);
 		        	System.out.println("登録結果Boolean");
 			        System.out.println(b_insert);
+
+
+
+
 		        } catch (Exception e) {
 					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
@@ -247,7 +251,9 @@ public class stuff_create_accounts_regist extends HttpServlet {
 		}
 
 
-		req.getRequestDispatcher("a_top.jsp").forward(req, resp);
+        // 次の登録完了サーブレットにリダイレクト
+        resp.sendRedirect(req.getContextPath() + "/stuff/create_stuff_1/comp");
+//		req.getRequestDispatcher("a_top.jsp").forward(req, resp);
 
 
 

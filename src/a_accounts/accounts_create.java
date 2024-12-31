@@ -32,7 +32,7 @@ public class accounts_create extends HttpServlet {
 		String ac_pass = req.getParameter("pass");
 
 //		パスワード2を取得
-		String ac_pass2 = req.getParameter("pass2");
+//		String ac_pass2 = req.getParameter("pass2");
 
 
 		// パスワードを取得してハッシュ化
@@ -40,7 +40,7 @@ public class accounts_create extends HttpServlet {
 		String hash_pass = BCrypt.hashpw(ac_pass, BCrypt.gensalt());
 
 
-		boolean isPasswordCorrect = BCrypt.checkpw(ac_pass2, hash_pass);
+//		boolean isPasswordCorrect = BCrypt.checkpw(ac_pass2, hash_pass);
 
 		System.out.println("ID");
 		System.out.println(ac_id);
@@ -49,8 +49,8 @@ public class accounts_create extends HttpServlet {
 		System.out.println("ハッシュ後");
 		System.out.println(hash_pass);
 
-		System.out.println("パス識別");
-		System.out.println(isPasswordCorrect);
+//		System.out.println("パス識別");
+//		System.out.println(isPasswordCorrect);
 
 //		DAO
 		AdminDAO dao = new AdminDAO();
