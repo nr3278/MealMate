@@ -58,7 +58,7 @@ public class rogin extends HttpServlet {
         	if(isPasswordCorrect==true){
 
 //        		ログイン成功→アカウント名セッションへ
-        		session.setAttribute("rog_name", ac_id);
+        		session.setAttribute("a_name", ac_id);
 
         	}
 
