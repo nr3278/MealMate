@@ -46,7 +46,7 @@ public class rogin extends HttpServlet {
 
 
 //			メールアドレスがない（間違っている）
-			if(accounts_list_dao==null){
+			if(accounts_list_dao == null || accounts_list_dao.isEmpty()){
 
 				System.out.println("ログイン失敗");
 //				ログインページへ
@@ -79,6 +79,10 @@ public class rogin extends HttpServlet {
 //		    パスワード判別
 		    boolean isPasswordCorrect = BCrypt.checkpw(ac_pass, dao_pass);
 
+		    System.out.println("パスワード判別");
+		    System.out.println(isPasswordCorrect);
+
+
 //			パスワードが間違っている
 		    if(isPasswordCorrect==false){
 
@@ -93,7 +97,9 @@ public class rogin extends HttpServlet {
 
 
 //    		ログイン成功→セッションへ
-		    HttpSession session = req.getSession();
+		    	System.out.println("ログイン成功");
+
+		    	HttpSession session = req.getSession();
 //		    名前
     		session.setAttribute("s_name", dao_name);
 
@@ -110,7 +116,7 @@ public class rogin extends HttpServlet {
     		System.out.println(st_g_id);
 
 
-    		req.getRequestDispatcher("a_top.jsp").forward(req, resp);
+    		req.getRequestDispatcher("top.jsp").forward(req, resp);
 
 
 		    }
@@ -128,9 +134,16 @@ public class rogin extends HttpServlet {
 //		boolean isPasswordCorrect = BCrypt.checkpw(ac_pass2, hash_pass);
 
 
-		req.getRequestDispatcher("a_top.jsp").forward(req, resp);
+//		req.getRequestDispatcher("a_top.jsp").forward(req, resp);
 
 
     }
 
 }
+
+
+
+
+//	お試しアカウント
+//	メールアドレス	qqqqq@qqqq.qqq
+//	パスワード		xt7wpuem

@@ -1,10 +1,21 @@
+<!--
+
 <%@page contentType="text/html; charset=UTF-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+ -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
+<!--
 <title>${param.title}</title>
+ -->
+
+
 <style>
     /* ボディのスタイル設定 */
     body {
@@ -12,14 +23,14 @@
         padding: 0; /* ページの内側の余白をなくす */
         height: 100vh; /* 画面の高さを100%に設定 */
     }
-    
+
     /* ナビゲーションバーのスタイル設定 */
     .nav {
         border-radius: 8px; /* 角を丸くする */
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 影を軽く追加 */
         justify-content: center; /* アイテムを中央に配置 */
     }
-    
+
     /* ナビゲーションアイコンの配置スタイル */
     .hako {
         display: flex; /* フレックスボックスでレイアウト */
@@ -28,7 +39,7 @@
         width: 100%; /* 横幅を100%に設定 */
         padding: 5px 0;
     }
-    
+
     /* リンク（アイコン）のスタイル設定 */
     .hako a {
         font-size: 1rem; /* アイコンのフォントサイズを大きく設定 */
@@ -63,5 +74,8 @@
         <a href="http://localhost:8080/MealMate/stuff/top.jsp">🏠</a>
     </div>
 </div>
+
+
+
 </body>
 </html>
