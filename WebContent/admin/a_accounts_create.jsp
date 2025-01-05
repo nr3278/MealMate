@@ -13,11 +13,14 @@
     			<input type="text" name="id" id="id" placeholder="IDを入力してください"  required>
 			</div>
 
+
+<!--
 			<div class="password">
 				<label>パスワード：</label>
     			<input type="text" name="pass" id="pass" placeholder="パスワードを入力してください"  required>
 			</div>
 
+ -->
 
 
 <p>アカウント作成</p>
