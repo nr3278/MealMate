@@ -54,6 +54,62 @@ public class MemberAccountsDAO extends DAO {
 
         return language;
     }
+
+
+//    登録
+    public boolean insert(String id,String name, String email,  String password, int lang_id) throws Exception {
+        Connection connection = getConnection();
+
+//        insert into MEMBER_ACCOUNTS  values ('000020', 'aaaa', 'asdfghj@fyuj.kjhg', 'pass', null, '1',now())
+        PreparedStatement pStatement = connection.prepareStatement("insert into MEMBER_ACCOUNTS  values (?, ?, ?, ?, null, ? ,now())");
+
+        pStatement.setString(1, id);
+        pStatement.setString(2, name);
+        pStatement.setString(3, email);
+        pStatement.setString(4, password);
+        pStatement.setInt(5, lang_id);
+
+        int line = pStatement.executeUpdate();
+
+        pStatement.close();
+        connection.close();
+
+        return line > 0 ? true: false;
+
+    }
+
+
+
+
+//  IDの重複チェック
+//  dup　false:重複していない
+  public boolean id_dup(String id) throws Exception {
+      Connection connection = getConnection();
+
+      PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM MEMBER_ACCOUNTS where ID like ?");
+
+      pStatement.setString(1, id);
+
+
+//      int line = pStatement.executeUpdate();
+
+      ResultSet rSet = pStatement.executeQuery();
+      boolean dup = true;
+      if(!rSet.next()){
+    	  dup=false;
+      }
+
+      pStatement.close();
+      connection.close();
+
+      return dup;
+
+  }
+
+
+
+
+
 }
 
 

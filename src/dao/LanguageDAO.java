@@ -13,7 +13,7 @@ public class LanguageDAO extends DAO {
         Connection connection = getConnection();
         List<Languages> languages = new ArrayList<Languages>();
 
-        PreparedStatement pStatement = connection.prepareStatement("select * from languages");
+        PreparedStatement pStatement = connection.prepareStatement("select * from languages ORDER BY code");
 
         ResultSet rSet = pStatement.executeQuery();
 

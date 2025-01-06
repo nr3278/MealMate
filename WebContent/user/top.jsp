@@ -29,10 +29,19 @@
         justify-content: center; /* 中央揃え */
         align-items: center; /* 垂直方向の調整 */
     }
-    
+
 </style>
 </head>
 <body>
+
+
+<form action="/MealMate/user/create_user_1" method="get">
+    <!-- フォームの入力フィールド -->
+    <button type="submit">
+アカウント作成</button>
+</form>
+
+
 <div class="top">
     <div class="apuri">
         <a href="http://localhost:8080/MealMate/user/register.jsp"><img class="text_img" src="../img/touroku.png"></a>
@@ -40,8 +49,14 @@
         <a href="http://localhost:8080/MealMate/user/map.jsp"><img class="text_img" src="../img/map.png"></a>
         <a href="http://localhost:8080/MealMate/user/translation.jsp"><img class="text_img" src="../img/sei.png"></a>
         <a href="http://localhost:8080/MealMate/auth/login.jsp"><img class="text_img" src="../img/login3.png"></a>
-        
+
     </div>
 </div>
+
+
+
+
+
+
 </body>
 </html>
