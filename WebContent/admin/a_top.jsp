@@ -7,30 +7,23 @@
 
 
 	<h1>TOP</h1>
-<form action="/MealMate/admin/0013" method="post">
-    <!-- フォームの入力フィールド -->
-    <button type="submit">
-sasa1</button>
-</form>
 
 
-<form action="/MealMate/admin/0012" method="get">
+<form action="" method="get">
     <!-- フォームの入力フィールド -->
-    <button type="submit">
-minnminn</button>
+    <button type="submit">店舗一覧</button>
 </form>
 
-<form action="/MealMate/admin/create_accounts_1" method="get">
+<form action="/MealMate/admin/a_create_store_1" method="get">
     <!-- フォームの入力フィールド -->
-    <button type="submit">
-パスワードを比較</button>
+    <button type="submit">店舗作成</button>
 </form>
 
-<form action="/MealMate/map" method="get">
+<form action="" method="get">
     <!-- フォームの入力フィールド -->
-    <button type="submit">
-住所実験</button>
+    <button type="submit">グループ一覧</button>
 </form>
+
 
 
 <form action="/MealMate/admin/a_create_group_1" method="get">
@@ -38,10 +31,7 @@ minnminn</button>
     <button type="submit">グループ作成</button>
 </form>
 
-<form action="/MealMate/admin/a_create_store_1" method="get">
-    <!-- フォームの入力フィールド -->
-    <button type="submit">店舗作成</button>
-</form>
+
 
 <button onclick="location.href=''">作成</button>
 <button onclick="location.href=''">キャンセル</button>
